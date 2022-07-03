@@ -17,6 +17,9 @@ echo "Detected IP Address is $IPADDY"
 SERVERNAME=$IPADDY
 SERVERALIAS=$IPADDY
 
+echo "Installind PreReqs"
+apt install pwgen git -y
+
 echo "Setting Up Repositories"
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch >>setup.log 2>>error.log
 rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-3.0-repository_latest.rpm >>setup.log 2>>error.log
